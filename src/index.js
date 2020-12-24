@@ -66,7 +66,6 @@ const SubmitForm = (props) => {
 }
 
 let Settings = ({toggleColor}) => {
-    console.log('ii')
     return <div className='settings-component'>
         <span>Settings:</span>
         <button onClick={toggleColor} className='button'>change background color</button>
