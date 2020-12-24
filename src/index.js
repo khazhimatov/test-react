@@ -85,15 +85,20 @@ const App = () => {
     }, [setState])
 
     const handleSubmit = task => {
-        setState({tasks: [...state.tasks, task]});
+        setState(state => ({
+            ...state,
+            tasks: [...state.tasks, task]
+        }));
     }
 
     const handleDelete = (index) => {
         const newArr = [...state.tasks];
         newArr.splice(index, 1);
-        setState({tasks: newArr});
+        setState(state => ({
+            ...state,
+            tasks: newArr
+        }));
     }
-
 
     return(
         <div className={`wrapper ${state.isColorDark ? 'dark' : 'white'}`}>
